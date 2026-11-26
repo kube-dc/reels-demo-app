@@ -1,3 +1,3 @@
 # reels-demo-app
 
-A one-page demo app used in Kube-DC tutorial videos. It is built from the Dockerfile and served by nginx on port 8080.
+A one-page Node.js demo app used in Kube-DC.cloud tutorial videos. It listens on port 8080 and shows whether a managed PostgreSQL is attached (from `DATABASE_URL` or the `PG*` / Secret keys in its environment).
