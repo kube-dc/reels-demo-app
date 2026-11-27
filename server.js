@@ -3,8 +3,8 @@ const http = require('http');
 const { Client } = require('pg');
 const port = process.env.PORT || 8080;
 async function dbLine() {
-  const url = process.env.DATABASE_URL;
-  const cfg = url ? { connectionString: url } : (process.env.PGHOST || process.env.host) ? {
+  const url = process.env.DATABASE_URL || process.env.DB_URI;
+  const cfg = url ? { connectionString: url.replace(/[?&]sslmode=[^&]*/g, '').replace(/[?&]sslrootcert=[^&]*/g, '') } : (process.env.PGHOST || process.env.host) ? {
     host: process.env.PGHOST || process.env.host, port: +(process.env.PGPORT || process.env.port || 5432),
     user: process.env.PGUSER || process.env.username || process.env.user, password: process.env.PGPASSWORD || process.env.password,
     database: process.env.PGDATABASE || process.env.dbname || process.env.database || 'app' } : null;
