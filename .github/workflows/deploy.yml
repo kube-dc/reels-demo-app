@@ -27,7 +27,7 @@ jobs:
       - uses: actions/checkout@v4
       - id: names
         run: |
-          app=$(echo "${{ github.event.repository.name }}" | tr '[:upper:]' '[:lower:]' | tr -c 'a-z0-9-\n' '-' | cut -c1-40 | sed 's/^-*//; s/-*$//')
+          app=reels-web
           echo "app=$app" >> "$GITHUB_OUTPUT"
           if [ -n "${{ vars.KUBE_DC_REGISTRY }}" ]; then
             echo "image=${{ vars.KUBE_DC_REGISTRY }}/${{ vars.KUBE_DC_REGISTRY_PROJECT }}/$app:${GITHUB_SHA}" >> "$GITHUB_OUTPUT"
