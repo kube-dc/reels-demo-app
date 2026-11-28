@@ -20,5 +20,5 @@ http.createServer(async (req, res) => {
   res.setHeader('content-type', 'text/html; charset=utf-8');
   res.end(`<!doctype html><meta name=viewport content="width=device-width,initial-scale=1"><title>Kube-DC demo app</title>
 <style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#010408;color:#eaeff5;font:600 30px/1.35 system-ui,sans-serif;text-align:center}b{color:#0081f1}small{display:block;margin-top:18px;font-size:18px;opacity:.75}</style>
-<main><p>Hello from <b>Kube-DC.cloud</b></p><small>version ${process.env.APP_VERSION || '1.0'}</small><small>${db}</small></main>`);
+<main><p>Hello from <b>Kube-DC.cloud</b></p><small>version ${process.env.APP_VERSION || '2.0'}</small><small>${db}</small></main>`);
 }).listen(port, () => console.log('listening on :' + port));
